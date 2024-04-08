@@ -1,0 +1,103 @@
+{% extends 'userbase.html' %}
+{% block prof %}
+{% for d in data %}
+
+<span class="prfil-img"><img src=/{{d.7}} alt="image" style="width: 50px;height: 50px"> </span> 
+		<div class="user-name">
+			<p>{{d.1}}</p>
+			
+        </div>
+    
+	{% endfor %}
+{% endblock %}
+ 
+{% block msg %}
+{% for d in det %}
+    <li><a href="/inbox/">
+    <div class="user_img"><img src=/{{d.1}} alt="" style="width: 25px;height:25px"></div>
+    <div class="notification_desc">
+        <p>{{d.0}}</p>
+    </div>
+    <div class="clearfix"></div>	
+    </li></a>
+{% endfor %}	
+{% endblock %}
+
+{% block feed%}
+{% for f in feed%}
+<li><a href="/feedback/">
+
+<div class="notification_desc">
+<p>{{f.0}}</p>
+
+</div>
+<div class="clearfix"></div>	
+</a></li>
+{% endfor %}
+{% endblock %}
+{% block content %}
+
+<div class="inner-block">
+        <div class="inbox">
+              <h2><b>DRAFT</b></h2>
+             <div class="col-md-4 compose">   	 	
+                 <div class="mail-profile">
+                        <div class="mail-pic">
+                                {% for d in data %}
+                                <img src=/{{d.7}}  alt="" style="width: 50px;height: 50px">
+                            </div>
+                        <div class="mailer-name"> 	
+                                		
+                                 <h5>{{d.1}}</h5>  	 				
+                                  <h6>{{d.6}}</h6> 
+                                  {%endfor%}  
+                         </div>
+                     <div class="clearfix"> </div>
+                 </div>
+                 <div class="compose-block">
+                    <a href="/message/">Compose</a>
+                </div>
+                 <div class="compose-bottom">
+                     <ul>
+						<li><a class="hilate" href="/inbox/"><i class="fa fa-inbox"> </i>Inbox</a></li>
+                         <li><a href="/sent/"><i class="fa fa-envelope-o"> </i>Sent Mail</a></li>
+                         <!--<li><a href=""><i class="fa fa-star-o"> </i>Important</a></li>-->
+                         <li><a href="/draft/"><i class="fa fa-pencil-square-o"> </i>Drafts</a></li>
+                         <li><a href="/result/"><i class="fa fa-star-o"> </i>Search</a></li>
+                       <!--  <li><a href=""><i class="fa fa-trash-o"> </i>Trash</a></li> -->
+                     </ul>
+                 </div>
+             </div>   	 
+                 <div class="col-md-8 compose-right">
+                        <div class="inbox-details-default">
+                            <div class="inbox-details-heading">
+                                
+                            </div>
+                            <div class="inbox-details-body">
+ 
+                                <form class="com-mail" method="POST" enctype="multipart/form-data">
+                                        <center><h1 style="color: red;"><b>{{msg}}<b></b></h1></center>  
+                                        {% csrf_token %}
+                                    <input type="text" name="to" placeholder="To :" value={{snd}} >
+                                    <input type="text" name="subject"placeholder="Subject :" value={{sub}}  > 
+                                    <textarea rows="6"  name='msg' placeholder="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">{{s}} </textarea>
+                                    <div class="form-group">
+                                            <input type="file" name="picture">
+                                      <!--  <div class="btn btn-default btn-file">
+                                            <i class="fa fa-paperclip"> </i> Attachment
+                                            
+                                        </div>-->
+                                    </div>
+                                    <input type="submit"  name="send" value="Send Message"> 
+                              
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+            
+              <div class="clearfix"> </div>     
+       </div>
+    </div>
+
+{% endblock %}

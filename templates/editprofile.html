@@ -1,0 +1,69 @@
+{% extends 'userbase.html' %}
+{% block prof %}
+    {% for d in data %}
+    	<span class="prfil-img"><img src=..{{d.7}} alt="image" style="width: 50px;height: 50px"> </span> 
+		<div class="user-name">
+			<p>{{d.1}}</p>
+			
+		</div>
+	{%endfor%}
+{% endblock%}
+{% block msg %}
+	{% for d in det %}
+		<li><a href="/inbox/">
+		<div class="user_img"><img src=..{{d.1}} alt="" style="width: 25px;height:25px"></div>
+		<div class="notification_desc">
+			<p>{{d.0}}</p>
+		</div>
+		<div class="clearfix"></div>	
+		</li></a>
+	{% endfor %}	
+{% endblock %}
+
+{% block feed%}
+{% for f in feed%}
+<li><a href="/feedback/">
+	
+   <div class="notification_desc">
+	<p>{{f.0}}</p>
+	
+	</div>
+  <div class="clearfix"></div>	
+ </a></li>
+ {% endfor %}
+ {% endblock %}
+{% block content %}
+        <table border="0" cellpadding="5" cellspacing="5" width="700px" align="center">
+                {% for d in data %}
+                <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>Name</td> <td>:</td>  <td><input type="text" name="e1" value="{{d.1}}"></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>Address</td><td>:</td><td><input type="text" name="e2" value="{{d.2}}"></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>Date of Birth</td><td>:</td><td><input type="date" name="e3" value="{{d.3}}" ></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>Gender</td><td>:</td><td><input type="text" name="e4" value="{{d.4}}" disabled></td><tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr></tr><td>Mobile</td><td>:</td><td><input type="text" name="e5" value="{{d.5}}"></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>Email</td><td>:</td><td><input type="text" name="e6" value="{{d.6}}"></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>Password</td><td>:</td><td><input type="password" name="e7" value="{{d.8}}"></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr>
+                    <td></td>
+                        <td><input type="submit" name="submit" value="Submit"></td>
+                    </tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </form>
+            {% endfor %}
+            </table>
+    </div>
+</div>
+
+{% endblock %}
+
+

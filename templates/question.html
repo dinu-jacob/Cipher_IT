@@ -1,0 +1,75 @@
+
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+		<title>CIPHER-IT.COM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link href="../static/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- Custom Theme files -->
+<link href="../static/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--js-->
+<script src="../static/web/js/jquery-2.1.1.min.js"></script> 
+<!--icons-css-->
+<link href="../static/web/css/font-awesome.css" rel="stylesheet"> 
+<!--Google Fonts-->
+<link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+<!--static chart-->
+</head>
+<body>	
+        <center><h1 style="color: red;"><b>{{msg}}</b></h1></center>
+        
+<div class="login-page">
+    <div class="login-main">  	
+    	 <div class="login-head">
+				<h1>Answer the question</h1>
+			</div>
+			<div class="login-block">
+				<form method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="question" value="What is your favourite color?" disabled >
+					<input type="text" name="answer" pattern="[a-zA-Z]{0,20}" class="lock" placeholder="Answer">
+					<div class="forgot-top-grids">
+						<div class="forgot-grid">
+							
+						</div>
+						<div class="forgot">
+							<a href="/login/">Login</a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<input type="submit" name="submit" value="Submit">	
+					<h3>Not a member?<a href="/registration/"> Sign up now</a></h3>				
+
+				</form>
+				<h5><a href="/common_home/">Go Back to Home</a></h5>
+			</div>
+      </div>
+</div>
+<!--inner block end here-->
+<!--copy rights start here-->
+<div class="copyrights">
+	
+</div>	
+<!--COPY rights end here-->
+
+<!--scrolling js-->
+		<script src="../static/web/js/jquery.nicescroll.js"></script>
+		<script src="../static/web/js/scripts.js"></script>
+		<!--//scrolling js-->
+<script src="../static/web/js/bootstrap.js"> </script>
+<!-- mother grid end here-->
+</body>
+</html>                    					
+
+

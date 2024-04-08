@@ -1,0 +1,91 @@
+{% extends 'userbase.html' %}
+{% block prof %}
+{% for d in data %}
+
+<span class="prfil-img"><img src=/{{d.7}} alt="image" style="width: 50px;height: 50px"> </span> 
+		<div class="user-name">
+			<p>{{d.1}}</p>
+			
+        </div>
+    
+	{% endfor %}
+{% endblock %}
+   
+{% block content %}
+
+
+<div class="inner-block">
+        <div class="inbox">
+              <h2><b></b></h2>
+             <div class="col-md-4 compose">   	 	
+                 <div class="mail-profile">
+                        <div class="mail-pic">
+                                {% for d in data %}
+                                <img src=..{{d.7}}  alt="" style="width: 50px;height: 50px">
+                            </div>
+                        <div class="mailer-name"> 	
+                                		
+                                 <h5><a href="#">{{d.1}}</a></h5>  	 				
+                                  <h6><a href="mailto:info@example.com">{{d.6}}</a></h6> 
+                                  {%endfor%}  
+                         </div>
+                     <div class="clearfix"> </div>
+                 </div>
+                 <div class="compose-block">
+                    <a href="/message/">Compose</a>
+                </div>
+                 <div class="compose-bottom">
+                     <ul>
+						<li><a class="hilate" href="/inbox/"><i class="fa fa-inbox"> </i>Inbox</a></li>
+                         <li><a href="/sent/"><i class="fa fa-envelope-o"> </i>Sent Mail</a></li>
+                         <!--<li><a href=""><i class="fa fa-star-o"> </i>Important</a></li>-->
+                         <li><a href="/draft/"><i class="fa fa-pencil-square-o"> </i>Drafts</a></li>
+                         <li><a href="/result/"><i class="fa fa-star-o"> </i>Search</a></li>
+                       <!--  <li><a href=""><i class="fa fa-trash-o"> </i>Trash</a></li> -->
+                     </ul>
+                 </div>
+             </div>   	 
+                 <div class="col-md-8 compose-right">
+                        <div class="inbox-details-default">
+                            <div class="inbox-details-heading">
+                                
+                            </div>
+                            <div class="inbox-details-body">
+                                    <div class="alert alert-info">
+                                            Sent Details
+                                            
+                                        </div>
+                                <form class="com-mail" method="POST">
+                                <table class="table table-hover">  
+                                   <tr>
+                                        <th>Sent</th>
+                                        <th>Subject</th>
+                                        <th>Date</th></tr>
+                                    {% for d in data1 %}
+                                        {% csrf_token %}
+                                    
+                                    <tr>
+                                        <td>{{d.1}}</td>
+                                        <td>{{d.2}}</td>
+                                        <td>{{d.0}}</td></tr>
+                                        </table>
+
+                                    <div class="form-group">
+                                      <!--  <div class="btn btn-default btn-file">
+                                            <i class="fa fa-paperclip"> </i> Attachment
+                                            <input type="file" name="attachment">
+                                        </div>-->
+                                    </div>
+                                    {% endfor %}
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+            
+              <div class="clearfix"> </div>     
+       </div>
+    </div>
+
+{% endblock %}

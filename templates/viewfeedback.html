@@ -1,0 +1,34 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+
+<div class="chit-chat-heading">
+	<br><h2 ><center><b>FEEDBACKS</h2></center></b><br>
+</div>
+
+<div class="table-responsive">
+	<table class="table table-hover">
+        
+            <tr>
+                <th>No.</th>
+                <th>Send By</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Feedback</th>
+               
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td><span class="badge badge-info">{{d.0}}</span></td>
+                <td><span class="label label-success">{{d.1}}</span></td>
+                <td><span class="label label-danger">{{d.3}}</span></td>
+                <td><span class="label label-warning">{{d.4}}</span></td>
+                <td><span class="label label-info">{{d.5}}</span></td>
+                
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

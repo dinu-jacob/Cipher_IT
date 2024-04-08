@@ -1,0 +1,47 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+
+<div class="chit-chat-heading">
+    <br>
+	<h2 ><center><b><span>USER</span>&nbsp;DETAILS</h2></center></b><br>
+</div>
+
+<div class="table-responsive">
+    <form method="POST">
+            {% csrf_token %}
+	<table class="table table-hover">  
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Answer</th>
+                <th>Verification</th>
+                <th>Status</th>
+               
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td><span class="badge badge-info">{{d.0}}</span></td>
+				<td><span class="label label-success">{{d.1}}</span></td>
+
+                <td><span class="label label-danger">{{d.2}}</span></td>
+                <td><span class="label label-info">{{d.3}}</span></td>
+                <td><span class="label label-warning">{{d.4}}</span></td>
+                <td><span class="label label-danger">{{d.5}}</span></td>
+                <td><span class="label label-success">{{d.6}}</span></td>
+                <td><span class="label label-info">{{d.9}}</span></td>
+                <td><a href="/userview/?id={{d.0}}&status=approved">Approve</a>
+                <a href="/userview/?id={{d.0}}&status=rejected">Reject</a></td>
+                <td><span class="label label-success">{{d.10}}</span></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+    </div>
+</div>
+
+{% endblock %}

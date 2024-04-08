@@ -1,0 +1,88 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CIPHER-IT.COM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link href="../static/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- Custom Theme files -->
+<link href="../static/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--js-->
+<script src="../static/web/js/jquery-2.1.1.min.js"></script> 
+<!--icons-css-->
+<link href="../static/web/css/font-awesome.css" rel="stylesheet">
+<!--Google Fonts-->
+<link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+<!--//charts-->
+</head>
+<body>	
+		<center><h1 style="color: red;"><b>{{error}}<b></b></h1></center>
+		<center><h1 style="color: red;"><b>{{msg}}<b></b></h1></center>
+<!--inner block start here-->
+<div class="signup-page-main">
+     <div class="signup-main">  	
+    	 <div class="signup-head">
+				<h1>Sign Up</h1>
+			</div>
+			<div class="signup-block">
+                    <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+           
+                    <input type="text" name="name" maxlength="32" pattern="[a-z A-Z\s]{1,32}" placeholder="Name" required="">
+                    <textarea rows='5' cols='50' name='address' pattern="[a-zA-Z0-9\s]{1,200}" placeholder="Address" required=""></textarea><br>
+                    <input type="date" name="dob" min="1900-01-01" max="2015-12-31" placeholder="Date of Birth" required=""><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="g1" value="male">&nbsp;<label  style="margin: 0em 0em 1.5em 0em;color:#686967;">Male</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" id="g2" value="female" style="padding: 6px 15px;"><label style="margin: 0em 0em 1.5em 0em;color:#686967;">&nbsp;Female</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Mobile" pattern="[6-9]{1}[0-9]{9}" required="" style="padding: 10px 20px;">
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="file" name="img12" id="img12" placeholder="Image" style="padding: 10px 20px;">
+                    <input type="password" name="pw" class="lock" placeholder="Password" required="">
+					<input type="password" name="cpw" class="lock" placeholder="Confirm Password" required="">
+					<input type="text" name="question" value="What is your favourite color?" disabled>
+					<input type="text" name="answer" pattern="[a-zA-Z]{0,20}" placeholder="Answer" required="">
+					<div class="forgot-top-grids">
+						<div class="forgot-grid">
+							<ul>
+								<li>
+									<input type="checkbox" id="brand1" value="">
+									<label for="brand1"><span></span>I agree to the terms</label>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="clearfix"> </div>
+					</div>
+					<input type="submit" name="submit" value="Sign up">														
+				</form>
+				<div class="sign-down">
+				<h4>Already have an account? <a href="/login/"> Login here.</a></h4>
+				  <h5><a href="{% url 'common_home' %}">Go Back to Home</a></h5>
+				</div>
+			</div>
+    </div>
+</div>
+<!--inner block end here-->
+<!--copy rights start here-->
+<div class="copyrights">
+	
+</div>	
+<!--COPY rights end here-->
+<!--scrolling js-->
+		<script src="../static/web/js/jquery.nicescroll.js"></script>
+		<script src="../static/web/js/scripts.js"></script>
+		<!--//scrolling js-->
+<script src="../static/web/js/bootstrap.js"> </script>
+<!-- mother grid end here-->
+</body>
+</html>

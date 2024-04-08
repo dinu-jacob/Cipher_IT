@@ -1,0 +1,68 @@
+{% extends 'userbase.html' %}
+{% block prof %}
+    {% for d in data %}
+    	<span class="prfil-img"><img src=/{{d.7}} alt="image" style="width: 50px;height: 50px"> </span> 
+		<div class="user-name">
+			<p>{{d.1}}</p>
+			
+		</div>
+	{%endfor%}
+{% endblock%}
+{% block msg %}
+	{% for d in det %}
+		<li><a href="/inbox/">
+		<div class="user_img"><img src=..{{d.1}} alt="" style="width: 25px;height:25px"></div>
+		<div class="notification_desc">
+			<p>{{d.0}}</p>
+		</div>
+		<div class="clearfix"></div>	
+		</li></a>
+	{% endfor %}	
+{% endblock %}
+
+{% block feed%}
+{% for f in feed%}
+<li><a href="/feedback/">
+	
+   <div class="notification_desc">
+	<p>{{f.0}}</p>
+	
+	</div>
+  <div class="clearfix"></div>	
+ </a></li>
+ {% endfor %}
+ {% endblock %}
+{% block content %}
+
+<div class="inner-block">
+        <div class="inbox">
+            <div class="col-md-8 compose-right">
+                <div class="inbox-details-default">
+                    <div class="inbox-details-heading">
+                        
+                    </div>
+                    <div class="inbox-details-body">
+                            <center><h2 style="color: red;"><b>{{msg}}<b></b></h2></center>
+                        <div class="alert alert-info">
+                            Enter your feedback here
+                        </div>
+                        <form class="com-mail" method="POST">
+                            {% csrf_token %}
+                            <input type="text" name="subject" value="Subject :" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required=""> 
+                            <textarea rows="6"  name='feedback' value="feedback :" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'feedback';}" required="">Feedback </textarea>                        
+                            <div class="form-group">
+                                <div >
+                                                    
+                                </div>
+                            </div>
+                            <input type="submit"  name="submit" value="Send Feedback" > 
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clearfix"> </div>     
+       </div>
+    </div>
+{% endblock %}
